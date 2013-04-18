@@ -8,6 +8,7 @@
     , fs = require('fs')
     , mkdirp = require('mkdirp')
     , connect = require('connect')
+    , http = require('request')
     , app = connect.createServer()
     , counterPath = path.join(__dirname, '..', 'var')
     , counterFile = path.join(counterPath, 'count.db')
@@ -20,11 +21,13 @@
         var count = Number(data) || 0;
         count += 1;
         fs.writeFile(counterFile, String(count), 'utf8', function (err) {
-          response.setHeader('Content-Type', 'application/json; charset=utf8');
-          response.write(JSON.stringify(
-            { error: mkdirErr || err, count: count }
-          ));
-          response.end();
+          http.get('http://www.yahoo.com/robots.txt', function (err3, r, data) {
+            response.setHeader('Content-Type', 'application/json; charset=utf8');
+            response.write(JSON.stringify(
+              { error: mkdirErr || err, count: data && count, hasInternet: !!data }
+            ));
+            response.end();
+          });
         });
       });
     });
