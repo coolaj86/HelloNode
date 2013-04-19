@@ -7,7 +7,7 @@
 #define MyAppPublisher "Hello Node LLC"
 #define MyAppURL "http://hurpdurp.com/"
 #define NSSM "nssm.exe"
-#define NSSM32 "nssm-x64.exe"
+#define NSSM32 "nssm-x86.exe"
 #define NSSM64 "nssm.exe"
 #define nodemsi "node-v0.10.4-x64.msi"
 
