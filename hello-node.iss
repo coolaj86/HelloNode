@@ -6,7 +6,7 @@
 #define MyAppVersion "1.0"
 #define MyAppPublisher "Hello Node LLC"
 #define MyAppURL "http://hurpdurp.com/"
-#define NSSM "nssm-x64.exe"
+#define NSSM "nssm.exe"
 #define nodemsi "node-v0.10.4-x64.msi"
 
 [Setup]
@@ -21,7 +21,9 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={pf}\{#MyAppShortName}
+;DefaultDirName={pf64}\{#MyAppShortName}
+; Testing to see if spaces or special characters were the problem
+DefaultDirName=C:\{#MyAppShortName}
 DisableDirPage=yes
 DefaultGroupName={#MyAppShortName}
 DisableProgramGroupPage=yes
@@ -30,7 +32,7 @@ DisableProgramGroupPage=yes
 ;InfoAfterFile=C:\Users\coolaj86\Downloads\after.txt
 OutputDir=C:\Users\coolaj86\Desktop
 OutputBaseFilename={#MyAppShortName}Installer
-SetupIconFile=C:\Users\coolaj86\Downloads\installer.ico
+;SetupIconFile=C:\Users\coolaj86\Downloads\installer.ico
 Compression=lzma
 SolidCompression=yes
 
