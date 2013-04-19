@@ -48,11 +48,10 @@ Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""A
 Filename: "{app}\nssm-x64.exe"; Parameters: "install WebAppCenter ""{pf64}\nodejs\node.exe"" ""{app}\bin\server.js"" ""5566"""; MinVersion: 0.0,5.0;
 
 [UninstallRun]
+; This removes node, the firewall rules, and the system service 
 Filename: "{sys}\msiexec.exe"; Parameters: "/passive /x ""{app}\node-v0.10.4-x64.msi"""; MinVersion: 0.0,5.0;
-Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenter"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
 Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterIn"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
 Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterOut"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
-Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenter"" program=""{pf64}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
 Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterIn"" program=""{pf64}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
 Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterOut"" program=""{pf64}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
 Filename: "{app}\nssm-x64.exe"; Parameters: "remove WebAppCenter confirm"; MinVersion: 0.0,5.0;
