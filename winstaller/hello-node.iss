@@ -7,6 +7,8 @@
 #define MyAppPublisher "Hello Node LLC"
 #define MyAppURL "http://hurpdurp.com/"
 #define NSSM "nssm.exe"
+#define NSSM32 "nssm-x64.exe"
+#define NSSM64 "nssm.exe"
 #define nodemsi "node-v0.10.4-x64.msi"
 
 [Setup]
@@ -40,9 +42,10 @@ SolidCompression=yes
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-Source: "C:\Users\coolaj86\Downloads\{#nodemsi}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\coolaj86\Downloads\nssm-x64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#nodemsi}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\HelloNode\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\#{NSSM32}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\#{NSSM64}"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Run]
