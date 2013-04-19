@@ -22,9 +22,9 @@ DefaultDirName={pf}\WebAppCenter
 DisableDirPage=yes
 DefaultGroupName=WebAppCenter
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\coolaj86\Downloads\LICENSE.txt
-InfoBeforeFile=C:\Users\coolaj86\Downloads\before.txt
-InfoAfterFile=C:\Users\coolaj86\Downloads\after.txt
+;LicenseFile=C:\Users\coolaj86\Downloads\LICENSE.txt
+;InfoBeforeFile=C:\Users\coolaj86\Downloads\before.txt
+;InfoAfterFile=C:\Users\coolaj86\Downloads\after.txt
 OutputDir=C:\Users\coolaj86\Desktop
 OutputBaseFilename=WebAppCenterInstaller
 SetupIconFile=C:\Users\coolaj86\Downloads\installer.ico
@@ -41,11 +41,18 @@ Source: "C:\Users\coolaj86\Downloads\nssm-x64.exe"; DestDir: "{app}"; Flags: ign
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Run]
+; These all run with 'runascurrentuser' (i.e. admin) whereas 'runasoriginaluser' would refer to the logged in user
 Filename: "{sys}\msiexec.exe"; Parameters: "/passive /i ""{app}\node-v0.10.4-x64.msi"""; MinVersion: 0.0,5.0;
-    Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenter"" program=""{pf}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
-    Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterIn"" program=""{pf}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
-    Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterOut"" program=""{pf}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
-    Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""AllowWebAppCenterIn"" program=""{pf}\nodejs\node.exe"" dir=in action=allow enable=yes"; Flags: runhidden; MinVersion: 0,5.0;
-    Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""AllowWebAppCenterOut"" program=""{pf}\nodejs\node.exe"" dir=out action=allow enable=yes"; Flags: runhidden; MinVersion: 0,5.0;
-Filename: "{app}\nssm-x64.exe"; Parameters: "remove WebAppCenter confirm"; MinVersion: 0.0,5.0;  
-Filename: "{app}\nssm-x64.exe"; Parameters: "install WebAppCenter ""{pf}\nodejs\node.exe"" ""{app}\bin\server.js"" ""5566"""; MinVersion: 0.0,5.0; 
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""AllowWebAppCenterIn"" program=""{pf64}\nodejs\node.exe"" dir=in action=allow enable=yes"; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""AllowWebAppCenterOut"" program=""{pf64}\nodejs\node.exe"" dir=out action=allow enable=yes"; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{app}\nssm-x64.exe"; Parameters: "install WebAppCenter ""{pf64}\nodejs\node.exe"" ""{app}\bin\server.js"" ""5566"""; MinVersion: 0.0,5.0;
+
+[UninstallRun]
+Filename: "{sys}\msiexec.exe"; Parameters: "/passive /x ""{app}\node-v0.10.4-x64.msi"""; MinVersion: 0.0,5.0;
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenter"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterIn"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterOut"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenter"" program=""{pf64}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterIn"" program=""{pf64}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""AllowWebAppCenterOut"" program=""{pf64}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{app}\nssm-x64.exe"; Parameters: "remove WebAppCenter confirm"; MinVersion: 0.0,5.0;
