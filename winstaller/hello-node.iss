@@ -44,8 +44,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Files]
 Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#nodemsi}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\HelloNode\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\#{NSSM32}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\#{NSSM64}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#NSSM32}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#NSSM64}"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Run]
