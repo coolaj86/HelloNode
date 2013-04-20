@@ -56,9 +56,9 @@ Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""{
 Filename: "{app}\{#NSSM}"; Parameters: "install {#MyAppShortName} ""{pf64}\nodejs\node.exe"" ""{app}\bin\server.js"" ""5566"""; MinVersion: 0.0,5.0;
 Filename: "{sys}\net.exe"; Parameters: "start {#MyAppShortName}"; Flags: runhidden; MinVersion: 0,5.0;
 
-
 [UninstallRun]
 ; This removes node, the firewall rules, and the system service
+Filename: "{sys}\net.exe"; Parameters: "stop {#MyAppShortName}"; Flags: runhidden; MinVersion: 0,5.0;
 Filename: "{sys}\msiexec.exe"; Parameters: "/passive /x ""{app}\{#nodemsi}"""; MinVersion: 0.0,5.0;
 Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""{#MyAppName} In"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
 Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=""{#MyAppName} Out"" program=""{pf32}\nodejs\node.exe"""; Flags: runhidden; MinVersion: 0,5.0;
