@@ -15,7 +15,6 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prepublish": "node deploy"
   },
   "dependencies": {
     "connect": "~2.7.6",

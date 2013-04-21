@@ -1,12 +1,13 @@
 var Service = require('node-windows').Service
   , path = require('path')
+  , whattodo = process.argv[2]
   ;
 
 console.log(__dirname);
 
 // Create a new service object
 var svc = new Service({
-  name:'HelloNode10',
+  name:'HelloNode',
   description: 'An installable node service',
   script: path.join(__dirname, 'server.js')
 });
@@ -43,4 +44,12 @@ svc.on('error', function (err) {
   console.log('error', err);
 });
 
-svc.install();
+if (!whattodo) {
+  return;
+} else if ('install' === whattodo) {
+  svc.install();
+} else if ('uninstall' === whattodo) {
+  svc.uninstall();
+} else if ('remove' === whattodo) {
+  svc.uninstall();
+}
