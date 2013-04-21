@@ -49,8 +49,5 @@ if (!whattodo) {
 } else if ('install' === whattodo) {
   svc.install();
 } else if ('uninstall' === whattodo || 'remove' === whattodo) {
-  svc.stop();
-  svc.on('stop', function () {
-    svc.uninstall();
-  });
+  svc.uninstall();
 }
