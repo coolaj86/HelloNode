@@ -83,3 +83,6 @@ Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=
 
 ; Uninstall Node
 Filename: "{sys}\msiexec.exe"; Parameters: "/passive /x ""{app}\{#nodemsi}"""; MinVersion: 0.0,5.0;
+
+; Remove all leftovers
+Filename: "{sys}\rmdir"; Parameters: "-r ""{app}"""; MinVersion: 0.0,5.0;
