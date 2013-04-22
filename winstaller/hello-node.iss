@@ -11,6 +11,7 @@
 #define NSSM32 "nssm-x86.exe"
 #define NSSM64 "nssm.exe"
 #define nodemsi "node-v0.10.4-x64.msi"
+#define MyAppIcon "web-trifecta-badge.ico"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -43,6 +44,7 @@ SolidCompression=yes
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
+Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#MyAppIcon}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#nodemsi}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\HelloNode\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#NSSM32}"; DestDir: "{app}"; Flags: ignoreversion
@@ -50,7 +52,7 @@ Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#NSSM6
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\{#MyAppName}"; Filename: "{pf32}\Google\Chrome\Application\chrome.exe"; Parameters: "--app=http://localhost:5566 --user-data-dir=%APPDATA%\{#MyAppShortName}\"
+Name: "{group}\{#MyAppName}"; Filename: "{pf32}\Google\Chrome\Application\chrome.exe"; Parameters: "--app=http://localhost:5566 --user-data-dir=%APPDATA%\{#MyAppShortName}\"; IconFilename: "{app}\{#MyAppIcon}"
 
 [Run]
 ; These all run with 'runascurrentuser' (i.e. admin) whereas 'runasoriginaluser' would refer to the logged in user
