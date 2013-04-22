@@ -28,7 +28,7 @@ AppUpdatesURL={#MyAppURL}
 ; Testing to see if spaces or special characters were the problem
 DefaultDirName=C:\{#MyAppShortName}
 DisableDirPage=yes
-DefaultGroupName={#MyAppShortName}
+DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 ;LicenseFile=C:\Users\coolaj86\Downloads\LICENSE.txt
 ;InfoBeforeFile=C:\Users\coolaj86\Downloads\before.txt
@@ -49,6 +49,8 @@ Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#NSSM3
 Source: "C:\Users\coolaj86\Downloads\{#MyAppShortName}-master\winstaller\{#NSSM64}"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
+[Icons]
+Name: "{group}\{#MyAppName}"; Filename: "{pf32}\Google\Chrome\Application\chrome.exe"; Parameters: "--app=http://localhost:5566 --user-data-dir=%APPDATA%\{#MyAppShortName}\"
 
 [Run]
 ; These all run with 'runascurrentuser' (i.e. admin) whereas 'runasoriginaluser' would refer to the logged in user
