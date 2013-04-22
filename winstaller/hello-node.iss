@@ -62,10 +62,10 @@ Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""{
 Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=""{#MyAppName} Out"" program=""{app}\bin\daemon\{#MyAppLCShortName}.exe"" dir=out action=allow enable=yes"; Flags: runhidden; MinVersion: 0,5.0;
 
 ; Add System Service
-;Filename: "{app}\{#NSSM}"; Parameters: "install {#MyAppShortName} ""{pf64}\nodejs\node.exe"" ""{app}\bin\server.js"" ""5566"""; MinVersion: 0.0,5.0;
-;Filename: "{sys}\net.exe"; Parameters: "start {#MyAppShortName}"; Flags: runhidden; MinVersion: 0,5.0;
-Filename: "{pf64}\nodejs\node.exe"; Parameters: "{app}\bin\windows-service-installer.js install"; MinVersion: 0.0,5.0;
-Filename: "{sys}\net.exe"; Parameters: "start {#MyAppLCShortName}"; Flags: runhidden; MinVersion: 0,5.0;
+Filename: "{app}\{#NSSM}"; Parameters: "install {#MyAppShortName} ""{pf64}\nodejs\node.exe"" ""{app}\bin\server.js"" ""5566"""; MinVersion: 0.0,5.0;
+Filename: "{sys}\net.exe"; Parameters: "start {#MyAppShortName}"; Flags: runhidden; MinVersion: 0,5.0;
+;Filename: "{pf64}\nodejs\node.exe"; Parameters: "{app}\bin\windows-service-installer.js install"; MinVersion: 0.0,5.0;
+;Filename: "{sys}\net.exe"; Parameters: "start {#MyAppLCShortName}"; Flags: runhidden; MinVersion: 0,5.0;
 
 
 [UninstallRun]
