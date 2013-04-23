@@ -25,3 +25,5 @@ Windows is a tough beast. InnoSetup helps, but it isn't as simple as deb or pkg 
 ## Resources
 
   [How to set up Windows Firewall from Commandline](http://support.microsoft.com/kb/947709)
+  [Conditionals in InnoSetup](http://stackoverflow.com/questions/3493416/how-to-run-a-file-before-setup-with-inno-setup)
+  [How to manually delete a Windows System Service](http://geekswithblogs.net/shahedul/archive/2006/10/13/93984.aspx)
