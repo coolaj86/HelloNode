@@ -21,3 +21,7 @@ but will still function on Windows.
 Windows is a tough beast. InnoSetup helps, but it isn't as simple as deb or pkg by any means.
 
   <https://github.com/coolaj86/HelloNode/issues?labels=InnoSetup&page=1&state=open>
+
+## Resources
+
+  [How to set up Windows Firewall from Commandline](http://support.microsoft.com/kb/947709)
