@@ -64,9 +64,9 @@ Source: "{#USERPROFILE}\Downloads\{#MyAppShortName}-master\{#MyAppShortName}\*";
 
 
 [Icons]
-Name: "{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\{#MyAppIcon}"
+Name: "{commonprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\{#MyAppIcon}"
 
-; Here's an example of how you could use a start menu item for just Chrome, no batch file 
+; Here's an example of how you could use a start menu item for just Chrome, no batch file
 ;Name: "{group}\{#MyAppName}"; Filename: "{pf32}\Google\Chrome\Application\chrome.exe"; Parameters: "--app=http://localhost:5566 --user-data-dir=%APPDATA%\{#MyAppShortName}\"; IconFilename: "{app}\{#MyAppIcon}"
 
 
