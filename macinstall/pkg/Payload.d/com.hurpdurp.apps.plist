@@ -11,13 +11,24 @@
     <string>com.hurpdurp.apps</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/local/lib/HelloNode/server.js</string>
+      <string>/usr/local/bin/node</string>
+      <string>/opt/HelloNode/bin/server.js</string>
     </array>
     <key>UserName</key>
     <string>root</string>
     <key>RunAtLoad</key>
     <true/>
+    <key>KeepAlive</key>
+    <true/>
     <key>OnDemand</key>
     <false/>
+    <!--
+    <key>StandardOutPath</key>
+    <string>/var/log/hellonode.info.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/hellonode.err.log</string>
+    <key>Debug</key>
+    <true/>
+    -->
   </dict>
 </plist>

@@ -2,3 +2,11 @@
 
 launchctl unload -w /Library/LaunchDaemons/com.hurpdurp.apps.plist || true
 launchctl load -w /Library/LaunchDaemons/com.hurpdurp.apps.plist
+
+#launchctl submit \
+#  -l com.hurpdurp.apps \
+#  -o /var/logs/hellonode.info.log \
+#  -e /var/logs/hellonode.err.log \
+#  -- \
+#  /usr/local/bin/node \
+#  /opt/HelloNode/bin/server.js
