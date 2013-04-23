@@ -12,6 +12,7 @@
 #define NSSM64 "nssm.exe"
 #define nodemsi "node-v0.10.4-x64.msi"
 #define MyAppIcon "web-trifecta-badge.ico"
+#define MyAppInstallerIcon "installer.ico"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
