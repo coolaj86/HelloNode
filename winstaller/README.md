@@ -1,5 +1,8 @@
 ## Windows Installer
 
+See [How to Create an InnoSetup Installer](http://blog.coolaj86.com/articles/how-to-create-an-innosetup-installer.html)
+for details on how this installer was created.
+
 This is the Windows Installer for HelloNode. It uses
 
   * [Non-Sucking Service Manager (nssm) 2.16](http://nssm.cc/download/nssm-2.16.zip) ([nssm.cc](http://nssm.cc))
