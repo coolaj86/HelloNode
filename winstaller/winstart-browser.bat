@@ -7,6 +7,9 @@
 ) ELSE (
   start %~dp0\msie-app-secure.hta
 )
+
+:: Note that comments can't be nested in if blocks!
+
 ::  IF EXIST "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" (
 :: Need to read more http://support.mozilla.org/en-US/questions/955250
 :: https://developer.mozilla.org/en-US/docs/Getting_started_with_XULRunner
