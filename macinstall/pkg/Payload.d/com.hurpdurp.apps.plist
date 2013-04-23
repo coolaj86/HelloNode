@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <true/>
+    </dict>
+    <key>Label</key> 
+    <string>com.hurpdurp.apps</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/lib/HelloNode/server.js</string>
+    </array>
+    <key>UserName</key>
+    <string>root</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>OnDemand</key>
+    <false/>
+  </dict>
+</plist>

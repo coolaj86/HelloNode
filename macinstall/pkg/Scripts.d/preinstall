@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+CURMAJOR=0
+CURMINOR=10
+CURPATCH=4
+NEXTMAJOR=2
+PACKAGE=node-v$CURMAJOR.$CURMINOR.$CURPATCH.pkg
+MAJOR=`node -e "require('util').print(process.version.replace('v', '').split('.')[0])"`
+MINOR=`node -e "require('util').print(process.version.replace('v', '').split('.')[1])"`
+PATCH=`node -e "require('util').print(process.version.replace('v', '').split('.')[2])"`
+
+if [ $MAJOR -eq $CURMAJOR ]
+then
+  if [ $MINOR -lt $CURMINOR ]
+  then
+    # very old node, upgrade it
+    echo "VERY OLD NODE, UPGRADE"
+    installer -pkg $PACKAGE -target /
+  elif [ $MINOR -eq $CURMINOR ]
+  then
+    if [ $PATCH -lt $CURPATCH ]
+    then
+      # old node, upgrade it
+      echo "OLDER NODE, UPGRADE"
+      installer -pkg $PACKAGE -target /
+    else
+      echo "RECENT NODE, NO CHANGE"
+    fi
+  fi
+elif [ $MAJOR -lt $NEXTMAJOR ]
+then
+  echo "NEWER NODE, NO CHANGE"
+elif [ $MAJOR -gte $NEXTMAJOR ]
+then
+  echo "WAY NEW NODE, MIGHT NOT WORK, BUT NO CHANGE"
+else
+  echo "NO NODE, INSTALL"
+  installer -pkg $PACKAGE -target /
+fi

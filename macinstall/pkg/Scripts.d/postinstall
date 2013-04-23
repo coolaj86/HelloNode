@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+launchctl unload -w /Library/LaunchDaemons/com.hurpdurp.apps.plist || true
+launchctl load -w /Library/LaunchDaemons/com.hurpdurp.apps.plist
