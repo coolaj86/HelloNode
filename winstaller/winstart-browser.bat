@@ -5,11 +5,11 @@
 @IF EXIST "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" (
   "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --app=http://localhost:5566 --use-data-dir=%APPDATA%\HelloNode\
 ) ELSE (
+  start %~dp0\msie-app-secure.hta
+)
 ::  IF EXIST "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" (
-  :: Need to read more http://support.mozilla.org/en-US/questions/955250
-  :: https://developer.mozilla.org/en-US/docs/Getting_started_with_XULRunner
+:: Need to read more http://support.mozilla.org/en-US/questions/955250
+:: https://developer.mozilla.org/en-US/docs/Getting_started_with_XULRunner
 ::  "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" -app %~dp0\firefox-app.ini
 ::  ) ELSE (
-    start %~dp0\msie-app-secure.hta
 ::  )
-)
