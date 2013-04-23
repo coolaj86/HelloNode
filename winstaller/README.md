@@ -10,6 +10,12 @@ This is the Windows Installer for HelloNode. It uses
   * [NodeJS v0.10.4](http://nodejs.org/dist/v0.10.4/x64/node-v0.10.4-x64.msi) ([nodejs.org](http://nodejs.org))
   * [HelloNode](https://github.com/coolaj86/HelloNode/tree/master/HelloNode) ([github.com/coolaj86/HelloNode](https://github.com/coolaj86/HelloNode))
 
+## Beware CRLF
+
+Note that `.gitattributes` specifies `winstaller/winstart-browser.bat eof=crlf`.
+This is so that the file can be edited on Operating Systems,
+but will still function on Windows.
+
 ## Known Issues
 
 Windows is a tough beast. InnoSetup helps, but it isn't as simple as deb or pkg by any means.
