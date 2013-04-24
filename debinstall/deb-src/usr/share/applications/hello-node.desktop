@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Hello Node Browser
 Comment=Open Hello Node in Chrome
-Exec=google-chrome-stable --app="http://localhost:5566#%U"
+Exec=google-chrome --app="http://localhost:5566#%U"
 Terminal=false
 Type=Application
 Icon=hello-node
