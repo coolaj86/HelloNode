@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # make sure that the previous installation is done
-sleep 15
+sleep 5
 
 # http://blog.coolaj86.com/articles/google-repos-for-linux.html
 
