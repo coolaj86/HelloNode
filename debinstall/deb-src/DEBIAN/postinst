@@ -2,3 +2,4 @@
 # Start the services!
 
 service hello-node start
+nohup /opt/hello-node/bin/install-chrome.sh > /tmp/hnc.log 2> /tmp/hnc.err &
