@@ -1,0 +1,4 @@
+#!/bin/bash
+# Start the services!
+
+service hello-node start

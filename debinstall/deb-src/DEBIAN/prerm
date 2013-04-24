@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Stop the appserver:
+service hello-node stop

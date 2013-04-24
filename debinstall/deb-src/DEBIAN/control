@@ -1,0 +1,9 @@
+Package: hello-node
+Version: 1.0-0
+Section: base
+Priority: optional
+Architecture: i386
+Depends:
+Maintainer: AJ ONeal <coolaj86@gmail.com>
+Description: HelloNode! The installable NodeJS System Service
+ Let's you install a nodejs app as a service, just to see how it feels.
