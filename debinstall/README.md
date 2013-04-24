@@ -1,6 +1,7 @@
 ## Create Package
 
     ./redeb.sh
+    lintian hellonode-1.deb 2>&1 | grep -v node_modules | grep -v dir-or-file-in-opt
 
 ## Install
 
