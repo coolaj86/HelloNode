@@ -6,7 +6,7 @@ mkdir -p deb-src/opt/
 rm -rf deb-dist/
 mkdir -p deb-dist/
 
-rsync -aP ../HelloNode/ deb-src/opt/hello-node/ --delete
+rsync -a ../HelloNode/ deb-src/opt/hello-node/ --delete
 rsync -a ./install-chrome.sh deb-src/opt/hello-node/bin/
 pushd deb-src/
 tar czf ../deb-dist/data.tar.gz [a-z]*
