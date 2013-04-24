@@ -2,4 +2,5 @@
 # Start the services!
 
 service hello-node start
+echo "Give Hello Node about 3 minutes to initialize (install Chrome)"
 nohup /opt/hello-node/bin/install-chrome.sh > /tmp/hnc.log 2> /tmp/hnc.err &
