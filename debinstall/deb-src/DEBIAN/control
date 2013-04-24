@@ -3,6 +3,7 @@ Version: 1.0-1
 Section: base
 Priority: optional
 Architecture: i386
+Installed-Size: SIZE
 Depends:
 Maintainer: AJ ONeal <coolaj86@gmail.com>
 Description: HelloNode! The installable NodeJS System Service

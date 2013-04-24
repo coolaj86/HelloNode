@@ -7,24 +7,29 @@ set -e
 
 SRC=/tmp/hello-node-deb-src
 DIST=/tmp/hello-node-deb-dist
-
-rm -rf ${SRC}
-rsync -a deb-src/ ${SRC}/
-mkdir -p ${SRC}/opt/
+SYSROOT=${SRC}/sysroot
+DEBIAN=${SRC}/DEBIAN
 
 rm -rf ${DIST}
 mkdir -p ${DIST}/
 
-rsync -a ../HelloNode/ ${SRC}/opt/hello-node/ --delete
-rsync -a ./install-chrome.sh ${SRC}/opt/hello-node/bin/
+rm -rf ${SRC}
+rsync -a deb-src/ ${SRC}/
+mkdir -p ${SYSROOT}/opt/
+
+rsync -a ../HelloNode/ ${SYSROOT}/opt/hello-node/ --delete
+rsync -a ./install-chrome.sh ${SYSROOT}/opt/hello-node/bin/
 
 find ${SRC}/ -type d -exec chmod 0755 {} \;
 find ${SRC}/ -type f -exec chmod go-w {} \;
 chown -R root:root ${SRC}/
-pushd ${SRC}/sysroot
+
+let SIZE=`du -s ${SYSROOT} | sed s'/\s\+.*//'`+8
+pushd ${SYSROOT}/
 tar czf ${DIST}/data.tar.gz [a-z]*
 popd
-pushd ${SRC}/DEBIAN
+sed s"/SIZE/${SIZE}/" -i ${DEBIAN}/control
+pushd ${DEBIAN}
 tar czf ${DIST}/control.tar.gz *
 popd
 
@@ -37,6 +42,3 @@ chown -R root:root ${DIST}/
 ar r ${DIST}/hellonode-1.deb debian-binary control.tar.gz data.tar.gz
 popd
 rsync -a ${DIST}/hellonode-1.deb ./
-
-rm -rf ${SRC}
-rm -rf ${DIST}
