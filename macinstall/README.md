@@ -23,5 +23,9 @@ The contents of `HelloNode/*` should be installed to
 
 ## .app
 
-  * http://stackoverflow.com/questions/281372/executing-shell-scripts-from-the-os-x-dock
+Currently `Hello Node Browser` is an Automator app.
+I would like to make a simpler app (show nothing in the tray),
+but I haven't figured out how yet.
+
   * http://mathiasbynens.be/notes/shell-script-mac-apps
+  * http://stackoverflow.com/questions/281372/executing-shell-scripts-from-the-os-x-dock
