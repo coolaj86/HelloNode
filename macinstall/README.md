@@ -20,3 +20,8 @@ The contents of `HelloNode/*` should be installed to
 
 `/Library/LaunchDaemons/com.hurpdurp.apps.plist` should be loaded at startup
 (and immediately)
+
+## .app
+
+  * http://stackoverflow.com/questions/281372/executing-shell-scripts-from-the-os-x-dock
+  * http://mathiasbynens.be/notes/shell-script-mac-apps
