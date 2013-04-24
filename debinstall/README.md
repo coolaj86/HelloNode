@@ -1,6 +1,8 @@
 ## Create Package
 
-    ./redeb.sh
+The package is created in `/tmp`,  `chown`d to `root`, and `chmod`d to standard permissions
+
+    sudo ./redeb.sh
     lintian hellonode-1.deb 2>&1 | grep -v node_modules | grep -v dir-or-file-in-opt
 
 ## Install
