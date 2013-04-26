@@ -1,24 +1,20 @@
 Hello Node
 ===
 
-This is an example application which installs node and a node app.
+This is an example application I created to demonstrate how to install node and a node app.
 
-  * OS X
-  * Windows
-  * Ubuntu
-  * Source
-
-Access at <http://localhost:5566>
+Once installed, you can access the app at <http://localhost:5566>.
+It tests for file read / write and directory create permissions and tests for internet connectivity.
 
 Documentation
 ===
 
   * Apple Mac OS X
-    * [How to create an OS X pkg installer](http://blog.coolaj86.com/articles/how-to-create-an-osx-pkg-installer.html)
+    * [How to create an OSX (pkg) installer (for NodeJS apps)](how-to-create-an-osx-pkg-installer.html)
+  * [How to create a Windows (InnoSetup exe) installer (for NodeJS apps)](how-to-create-an-innosetup-installer.html)
     * [How to unpackage and repackage an OS X pkg installer](http://blog.coolaj86.com/articles/how-to-unpackage-and-repackage-pkg-osx.html)
   * Ubuntu Linux
+    * [How to create an Ubuntu (deb) installer (for NodeJS apps)](how-to-create-a-debian-installer.html)
   * Microsoft Windows
-    * [How to Create an InnoSetup Installer](http://blog.coolaj86.com/articles/how-to-create-an-innosetup-installer.html)
+    * [How to create a Windows (InnoSetup exe) installer (for NodeJS apps)](how-to-create-an-innosetup-installer.html)
     * [How to unpackage and repackage an InnoSetup exue](http://blog.coolaj86.com/articles/how-to-unpackage-and-repackage-an-innosetup-exe.html)
-  * Other / Source
-installable 
