@@ -11,6 +11,7 @@ Documentation
 
   * Apple Mac OS X
     * [How to create an OSX (pkg) installer (for NodeJS apps)](how-to-create-an-osx-pkg-installer.html)
+    * [Change .app icon](http://www.instructables.com/id/How-to-make-apps-automator/step6/Change-Icon/)
   * [How to create a Windows (InnoSetup exe) installer (for NodeJS apps)](how-to-create-an-innosetup-installer.html)
     * [How to unpackage and repackage an OS X pkg installer](http://blog.coolaj86.com/articles/how-to-unpackage-and-repackage-pkg-osx.html)
   * Ubuntu Linux
